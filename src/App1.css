@@ -1,135 +1,145 @@
-body,html {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
+body,
+html {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
-  .video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the video fills the screen */
-    z-index: -1; /* Sends the video to the background */
-  }
-  
-  .container {
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensures the video fills the screen */
+  z-index: -1;
+  /* Sends the video to the background */
+}
 
-    display: flex;
-    flex-wrap: wrap; /* Allow rows to wrap */
-    justify-content: center; /* Center items horizontally */
-    max-width: 60%; /* Restrict width */
-    margin: 20px auto; /* Center the container with some margin */
-    gap: 30px; /* Space between cards */
-    position: relative;
-    z-index: 1;
-    align-items: stretch;
-  }
-  
-  .responsive {
-    flex: 0 0 48%; /* 2 cards per row */
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .gallery {
-    position: relative; /* Required for the badges */
-    border: 1px solid #ddd;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Ensures badges stay within bounds */
-    text-align: center;
-    border-radius: 12px; /* Smooth rounded edges */
-    transition: transform 0.3s ease, box-shadow 0.3s ease,filter 0.3s ease-in-out;
-    flex-grow: 1; /* Ensures the card stretches to the height of the tallest sibling */
-    display: flex;
-    flex-direction: column; 
-  }
+.container {
 
-  .gallery:hover {
-    transform: scale(1.05); /* Slight scale up */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
-    filter: brightness(1.1); 
-  }
-  
-  .gallery img {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
-    transition: opacity 0.3s ease, filter 0.3s ease, transform 0.4s ease;
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow rows to wrap */
+  justify-content: center;
+  /* Center items horizontally */
+  max-width: 60%;
+  /* Restrict width */
+  margin: 20px auto;
+  /* Center the container with some margin */
+  gap: 30px;
+  /* Space between cards */
+  position: relative;
+  z-index: 1;
+}
 
-  }
+.responsive {
+  flex: 0 0 48%;
+  /* 2 cards per row */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  .gallery .desc {
-    padding: 15px;
-    text-align: left;
-    transition: color 0.3s ease, transform 0.4s ease;
-    flex-grow: 1; /* This will make the description container fill the remaining space */
-    display: flex;
-    flex-direction: column; /* Stack heading and text vertically */
-    justify-content: space-between; /* Keep content evenly distributed */
-  }
-  
-  .badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent badge background */
-    color: #fff;
-    padding: 5px 10px;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 5px;
-    z-index: 10;
-    transition: background-color 0.3s ease;
-  }
-  
-  .gallery:hover .badge {
-    background-color: rgba(255, 85, 0, 0.9); /* Change badge color */
-  }
+.gallery {
+  position: relative;
+  /* Required for the badges */
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /* Ensures badges stay within bounds */
+  text-align: center;
+  border-radius: 12px;
+  /* Smooth rounded edges */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease-in-out;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery:hover {
+  transform: scale(1.05);
+  /* Slight scale up */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  /* Enhanced shadow */
+  filter: brightness(1.1);
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.4s ease;
+
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Semi-transparent badge background */
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.gallery:hover .badge {
+  background-color: rgba(255, 85, 0, 0.9);
+  /* Change badge color */
+}
 
 
-  .desc {
-    padding: 15px;
-    text-align: left;
-    transition: color 0.3s ease,transform 0.4s ease;
-  }
+.desc {
+  padding: 15px;
+  text-align: center;
+  transition: color 0.3s ease, transform 0.4s ease;
+}
 
 
 .gallery:hover .desc h3,
 .gallery:hover .desc p {
-  color: #2563eb; /* Change text color on hover */
-  transform: translateY(-5px); /* Change text color on hover */
+  color: #2563eb;
+  /* Change text color on hover */
+  transform: translateY(-5px);
+  /* Change text color on hover */
 }
-  
-  .desc h3 {
-    margin: 5px 0;
-    font-size: 18px;
-    color: #333;
-  }
-  
-  .desc p {
-    margin: 3px 0;
-    font-size: 14px;
-    color: #777;
-  }
-  
-  @media only screen and (max-width: 700px) {
-    .responsive {
-      flex: 0 0 100%; /* Full width on small screens */
-    }
-  }
-  
-  /* Footer Styling */
 
-/* Footer Styling */
+.desc h3 {
+  margin: 5px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.desc p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: #777;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    flex: 0 0 100%;
+    /* Full width on small screens */
+  }
+}
+
 .hubspot-footer {
-  background-color: #0f242e; /* Match dark background color */
-  color: #ffffff; /* Light text for contrast */
-  width: 100%;
+  background-color: #0f242e;
+  /* Match dark background color */
+  color: #ffffff;
+  /* Light text for contrast */
+  width: auto;
   text-align: center;
-  padding: 30px 20px; /* Add spacing */
+  padding: 30px 20px;
+  /* Add spacing */
   font-family: Arial, sans-serif;
+  opacity: 0.7;
 }
 
 .social-icons {
@@ -143,20 +153,23 @@ body,html {
 
 .divider {
   border: none;
-  border-top: 1px solid #5e717a; /* Match light border color */
+  border-top: 1px solid #5e717a;
+  /* Match light border color */
   height: 1px;
-  width: 80px;
+  width: 100%;
 }
 
 .icon-link {
   font-size: 1.2rem;
-  color: #ffffff; /* White for social icons */
+  color: #ffffff;
+  /* White for social icons */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .icon-link:hover {
-  color: #00a6ff; /* Accent hover color */
+  color: #00a6ff;
+  /* Accent hover color */
 }
 
 .footer-logo {
